@@ -1,0 +1,28 @@
+<%= form_with model: @product, class: 'space-y-4 max-w-xl mx-auto px-4' do |form| %>
+  <% @product.errors.full_messages.each do |error| %>
+    <div class="bg-red-500 text-white px-4 py-2 rounded">
+      <%= error %>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :title, class: 'block text-gray-700' %>
+    <%= form.text_field :title, class: 'form-input mt-1 block w-full' %>
+  </div>
+  <div>
+    <%= form.label :description, class: 'block text-gray-700' %>
+    <%= form.text_area :description, class: 'form-input mt-1 block w-full' %>
+  </div>
+  <div>
+    <%= form.label :price, class: 'block text-gray-700' %>
+    <%= form.number_field :price, class: 'form-input mt-1 block w-full' %>
+  </div>
+    <%= form.label :brand_id, class: 'block text-gray-700' %>
+    <%= form.collection_select :brand_id, Brand.all.order(name: :asc), :id, :name, {prompt: 'Choose a brand'}, {class: 'form-select mt-1 block w-full'} %>
+  <div>
+    <%= form.label :photo, class: 'block text-gray-700' %>
+    <%= form.file_field :photo, class: 'form-input mt-1 block w-full' %>
+  </div>
+  <div class="text-center">
+    <%= form.submit 'Submit', class: 'inline-block px-4 py-2 text-lg font-bold transition duration-200 ease-in-out bg-blue-500 text-white hover:bg-blue-300 rounded-lg shadow hover:shadow-md' %>
+  </div>
+<% end %>

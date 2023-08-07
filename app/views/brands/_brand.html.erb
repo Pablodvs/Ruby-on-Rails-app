@@ -1,0 +1,9 @@
+<div id="<%= dom_id brand %>">
+  <%= brand.name %>
+  <%= link_to 'edit', edit_brand_path(brand)%>
+  <%= link_to brand_path(brand), data:{
+    turbo_method: :delete,
+    turbo_confirm: 'Are you sure?'
+} do %><button>delete</button>
+  <%end%>
+</div>

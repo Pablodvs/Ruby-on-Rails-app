@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+Xiaomi_10:
+  title: Xiaomi 10
+  description: 256GB
+  price: 850
+
+Iphone_6s:
+  title: Iphone 6s
+  description: 64GB
+  price: 300
